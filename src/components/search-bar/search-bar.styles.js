@@ -8,19 +8,22 @@ const searchBarStyles = makeStyles((theme) => ({
   },
   autoComplete: {
     color: "white",
+    padding: "0px",
     [theme.breakpoints.up("sm")]: {
       width: "500px",
     },
-    [theme.breakpoints.down("xs")]: {
-      width: "300px",
-    },
   },
   searchInputWrapper: {
+    width: "100%",
     display: "flex",
     alignItems: "flex-end",
     background: theme.palette.background.secondary,
     padding: "2% 4% 0 4%",
     borderRadius: "3px",
+    [theme.breakpoints.down("sm")]: {
+      padding: "0 2%",
+      justifyContent: "space-between",
+    },
   },
   submitBtn: {
     color: "white",
@@ -28,6 +31,10 @@ const searchBarStyles = makeStyles((theme) => ({
     height: "100%",
     background: "transparent",
     marginLeft: "10px",
+    [theme.breakpoints.down("sm")]: {
+      width: "20px",
+      marginLeft: "5px",
+    },
   },
 }));
 

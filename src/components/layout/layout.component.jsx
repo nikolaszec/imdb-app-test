@@ -24,7 +24,7 @@ function Layout(props) {
   };
 
   const drawer = (
-    <div>
+    <div style={{ width: "100%" }}>
       <div className={classes.toolbar} />
 
       <Navigation />

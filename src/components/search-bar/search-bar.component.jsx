@@ -58,14 +58,17 @@ const SearchBar = ({
   };
 
   return (
-    <div>
+    <div style={{ width: "100%" }}>
       <form className={classes.form} onSubmit={handleSubmit}>
         <Autocomplete
           className={classes.autoComplete}
           loading={isFetchingOptions}
-          noOptionsText=""
+          noOptionsText={
+            query.length > 2 ? "No movies found" : "No entered data"
+          }
           fullWidth
           clearOnEscape
+          openOnFocus={true}
           id="free-solo"
           onChange={handleSelectedMovie}
           options={Object.keys(options).map((key) => key)}

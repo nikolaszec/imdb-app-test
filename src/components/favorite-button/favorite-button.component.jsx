@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
@@ -19,14 +19,23 @@ const FavoriteButton = ({
   addMovieToFavoritesAsync,
   removeMovieFromFavoritesAsync,
 }) => {
+  const [openMessage, setOpenMessage] = useState(false);
   return (
     <div>
       {!isAuth ? (
-        <Tooltip title="Please login first">
-          <IconButton>
+        <IconButton onClick={() => setOpenMessage(!openMessage)}>
+          <Tooltip
+            onClick={() => setOpenMessage(!openMessage)}
+            open={openMessage}
+            onClose={() => setOpenMessage(false)}
+            leaveTouchDelay={1200}
+            leaveDelay={1200}
+            title="Please login first"
+            placement="right"
+          >
             <FavoriteBorderIcon color="primary" />
-          </IconButton>
-        </Tooltip>
+          </Tooltip>
+        </IconButton>
       ) : (
         <React.Fragment>
           <IconButton

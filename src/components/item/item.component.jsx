@@ -16,6 +16,7 @@ const Item = ({ item }) => {
     <Grid item xs={12} sm={4} lg={2}>
       <Grow in>
         <div
+          onClick={() => setDetailsView(!detailsView)}
           onMouseEnter={() => setDetailsView(true)}
           onMouseLeave={() => setDetailsView(false)}
         >

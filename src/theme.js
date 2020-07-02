@@ -57,14 +57,16 @@ let theme = createMuiTheme({
       root: {
         padding: "0",
         outline: "none",
-        width: "400px",
-        [defaultTheme.breakpoints.down("xs")]: {
-          maxWidth: "250px",
-        },
+        // width: "400px",
+        // [defaultTheme.breakpoints.down("xs")]: {
+        //   maxWidth: "250px",
+        // },
       },
       input: {
         root: {
-          padding: "0px",
+          ['class*="MuiFilledInput-root"']: {
+            border: "1px solid red",
+          },
         },
         "&& :focus": {
           border: "none",
@@ -79,6 +81,7 @@ let theme = createMuiTheme({
       paper: {
         background: colors.black_200,
         color: "white",
+        minWidth: "240px",
       },
     },
     MuiAppBar: {
@@ -119,6 +122,11 @@ let theme = createMuiTheme({
     MuiCard: {
       root: {
         marginBottom: "10px",
+
+        [defaultTheme.breakpoints.down("sm")]: {
+          border: `3px solid ${colors.black_300}`,
+          borderRadius: "3px",
+        },
       },
     },
   },
@@ -142,6 +150,9 @@ let theme = createMuiTheme({
       default: colors.black_100,
       secondary: colors.black_300,
       contrastText: colors.white_100,
+      [defaultTheme.breakpoints.down("sm")]: {
+        default: colors.black_400,
+      },
     },
   },
   root: {

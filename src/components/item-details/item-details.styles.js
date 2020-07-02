@@ -6,6 +6,9 @@ const itemDetailsStyles = ({ imagePath }) => {
       marginLeft: "0%",
       width: "100%",
       borderRadius: "5px",
+      [theme.breakpoints.down("sm")]: {
+        height: "100%",
+      },
     },
     imageContainer: {
       height: "100%",
@@ -21,7 +24,7 @@ const itemDetailsStyles = ({ imagePath }) => {
           rgba(0, 0, 0, 0.95),
            rgba(0, 0, 0, 1)), 
            
-           url(${imagePath.large})`,
+           url(${imagePath.large && imagePath.large})`,
       [theme.breakpoints.down("xs")]: {
         backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.6),
             rgba(0, 0, 0, 0.7),
@@ -30,7 +33,7 @@ const itemDetailsStyles = ({ imagePath }) => {
             rgba(0, 0, 0, 0.95),
              rgba(0, 0, 0, 1)), 
              
-             url(${imagePath.small})`,
+             url(${imagePath.small && imagePath.small})`,
       },
     },
     detailsWrapper: {
