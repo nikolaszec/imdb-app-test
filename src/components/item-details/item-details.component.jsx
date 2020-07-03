@@ -36,7 +36,12 @@ const ItemDetails = ({
       ) : (
         <div className={classes.imageContainer}>
           <div className={classes.detailsWrapper}>
-            <Typography variant="h3" color="primary" gutterBottom>
+            <Typography
+              variant="h3"
+              color="primary"
+              gutterBottom
+              className={classes.title}
+            >
               {movieDetails.title}
             </Typography>
             <Typography variant="subtitle1" gutterBottom>

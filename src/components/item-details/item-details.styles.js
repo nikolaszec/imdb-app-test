@@ -1,6 +1,11 @@
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 const itemDetailsStyles = ({ imagePath }) => {
   return makeStyles((theme) => ({
+    title: {
+      [theme.breakpoints.down("sm")]: {
+        marginTop: "25%",
+      },
+    },
     data: {
       color: theme.palette.secondary.main,
     },
@@ -13,8 +18,11 @@ const itemDetailsStyles = ({ imagePath }) => {
       width: "100%",
       borderRadius: "5px",
       [theme.breakpoints.down("sm")]: {
-        minHeight: "100vh",
+        // minHeight: "100vh",
+        // maxHeight: "100%",
+        minHeight: "fit-content",
         maxHeight: "100%",
+        height: "100vh",
       },
     },
     imageContainer: {
