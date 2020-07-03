@@ -56,17 +56,26 @@ const ItemDetails = ({
               {movieDetails.overview}
             </Typography>
 
-            <Typography variant="subtitle1" gutterBottom>
-              Duration: {movieDetails.runtime} min
+            <Typography variant="subtitle1" gutterBottom color="primary">
+              Duration:{" "}
+              <span className={classes.dataInfo}>
+                {" "}
+                {movieDetails.runtime} min
+              </span>
             </Typography>
-            <Typography variant="subtitle1" gutterBottom>
-              Relase date: {movieDetails.release_date}
+            <Typography variant="subtitle1" gutterBottom color="primary">
+              Relase date:{" "}
+              <span className={classes.dataInfo}>
+                {movieDetails.release_date}
+              </span>
             </Typography>
-            <Typography variant="subtitle1">
+            <Typography color="primary" variant="subtitle1">
               Budget:{" "}
-              {movieDetails.budget > 1
-                ? `${movieDetails.budget} $`
-                : "No data yet."}
+              <span className={classes.dataInfo}>
+                {movieDetails.budget > 1
+                  ? `${movieDetails.budget} $`
+                  : "No data yet."}
+              </span>
             </Typography>
           </div>
         </div>

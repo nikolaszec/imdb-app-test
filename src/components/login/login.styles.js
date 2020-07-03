@@ -9,6 +9,7 @@ const loginStyles = makeStyles((theme) => ({
   formWrapper: {
     [theme.breakpoints.down("xs")]: {
       width: "100%",
+      padding: "0 3%",
     },
     width: "50%",
     margin: "0 auto",

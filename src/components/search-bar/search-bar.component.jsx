@@ -45,8 +45,8 @@ const SearchBar = ({
   const handleSelectedMovie = (event, value) => {
     if (query.length > 2 && options[value] !== undefined) {
       router.push("/movie/[slug]", `/movie/${options[value].id}`);
-    } else if (query.length > 2) {
-      router.push("/movies/[slug]", `/movies/search_query=${query}`);
+    } else {
+      clearAutoCompleteOptions();
     }
   };
 
@@ -63,12 +63,9 @@ const SearchBar = ({
         <Autocomplete
           className={classes.autoComplete}
           loading={isFetchingOptions}
-          noOptionsText={
-            query.length > 2 ? "No movies found" : "No entered data"
-          }
+          noOptionsText={"No results"}
           fullWidth
-          clearOnEscape
-          openOnFocus={true}
+          clearOnBlur={false}
           id="free-solo"
           onChange={handleSelectedMovie}
           options={Object.keys(options).map((key) => key)}

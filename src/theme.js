@@ -15,8 +15,12 @@ const drawerWidth = "240";
 let theme = createMuiTheme({
   overrides: {
     MuiSvgIcon: {
+      root: {
+        color: colors.red_100,
+      },
       fontSizeSmall: {
-        display: "none",
+        // display: "none",
+        color: colors.red_100,
       },
     },
     "&& .MuiInput-root:hover::before": {

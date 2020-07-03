@@ -1,13 +1,20 @@
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 const itemDetailsStyles = ({ imagePath }) => {
   return makeStyles((theme) => ({
+    data: {
+      color: theme.palette.secondary.main,
+    },
+    dataInfo: {
+      color: "white",
+    },
     mainContainer: {
       height: "86vh",
       marginLeft: "0%",
       width: "100%",
       borderRadius: "5px",
       [theme.breakpoints.down("sm")]: {
-        height: "100%",
+        minHeight: "100vh",
+        maxHeight: "100%",
       },
     },
     imageContainer: {
@@ -26,7 +33,7 @@ const itemDetailsStyles = ({ imagePath }) => {
            
            url(${imagePath.large && imagePath.large})`,
       [theme.breakpoints.down("xs")]: {
-        backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.6),
+        backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0.6),
             rgba(0, 0, 0, 0.7),
             rgba(0, 0, 0, 0.83),
             rgba(0, 0, 0, 0.92),
@@ -41,7 +48,7 @@ const itemDetailsStyles = ({ imagePath }) => {
       padding: "8% 0 0 5%",
       [theme.breakpoints.down("xs")]: {
         width: "100%",
-        padding: "5% 2%",
+        padding: "7% 2% 5% 3%",
       },
     },
   }));

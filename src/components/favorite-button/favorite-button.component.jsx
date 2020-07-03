@@ -25,7 +25,6 @@ const FavoriteButton = ({
       {!isAuth ? (
         <IconButton onClick={() => setOpenMessage(!openMessage)}>
           <Tooltip
-            onClick={() => setOpenMessage(!openMessage)}
             open={openMessage}
             onClose={() => setOpenMessage(false)}
             leaveTouchDelay={1200}
