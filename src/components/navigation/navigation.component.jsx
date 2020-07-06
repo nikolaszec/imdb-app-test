@@ -10,21 +10,14 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Link from "next/link";
 import navigationLinks from "./navigation-links";
+import { useRouter } from "next/router";
+import NavItemLink from "../nav-item-link/nav-item-link.component";
 
 const Navigation = () => {
   return (
     <List>
       {navigationLinks.map((link) => {
-        return (
-          <Link key={link.id} href={link.path.href} as={link.path.as}>
-            <ListItem button selected={true}>
-              <ListItemIcon>{link.icon}</ListItemIcon>
-              <a>
-                <ListItemText primary={link.linkText} />
-              </a>
-            </ListItem>
-          </Link>
-        );
+        return <NavItemLink link={link} key={link.id} />;
       })}
       <AuthButtonLink />
     </List>

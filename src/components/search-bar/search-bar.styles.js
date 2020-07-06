@@ -16,7 +16,7 @@ const searchBarStyles = makeStyles((theme) => ({
   searchInputWrapper: {
     width: "100%",
     display: "flex",
-    alignItems: "flex-end",
+    alignItems: "center",
     background: theme.palette.background.secondary,
     padding: "2% 4% 0 4%",
     borderRadius: "3px",

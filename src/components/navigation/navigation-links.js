@@ -7,7 +7,7 @@ const navigationLinks = [
     id: 1,
     path: {
       href: "/",
-      as: "",
+      as: "/",
     },
     linkText: "Popular movies",
     icon: <TrendingUpIcon />,
@@ -34,7 +34,7 @@ const navigationLinks = [
     id: 4,
     path: {
       href: "/favorite",
-      as: "",
+      as: "/favorite",
     },
     linkText: "Favorite Movies",
     icon: <FavoriteIcon />,
