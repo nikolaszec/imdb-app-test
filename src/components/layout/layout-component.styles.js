@@ -21,7 +21,7 @@ export const layoutStyles = makeStyles((theme) => ({
     },
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(3),
     [theme.breakpoints.up("sm")]: {
       display: "none",
     },
@@ -34,14 +34,11 @@ export const layoutStyles = makeStyles((theme) => ({
     background: theme.palette.background.secondary,
     borderTop: `3px solid ${theme.palette.primary.main}`,
     borderBottom: `3px solid ${theme.palette.primary.main}`,
-    opacity: 0.9,
+
     borderRadius: "3%",
   },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
-    [theme.breakpoints.down("sm")]: {
-      padding: "5.7% 0 0 0",
-    },
   },
 }));

@@ -13,7 +13,6 @@ const NavItemLink = ({ link }) => {
     <Link key={link.id} href={link.path.href} as={link.path.as}>
       <ListItem button>
         <ListItemIcon>{link.icon}</ListItemIcon>
-
         <ListItemText
           className={isActive ? classes.active : ""}
           primary={link.linkText}
