@@ -1,8 +1,8 @@
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 const itemPreviewStyles = makeStyles((theme) => ({
   detailsWrapper: {
-    background: "black",
-    color: "white",
+    background: theme.palette.background.secondary,
+    color: theme.palette.primary.contrastText,
     opacity: ".82",
     position: "absolute",
     transition: "height .3s, visibility .1s",

@@ -41,8 +41,14 @@ const FavoriteButton = ({
             disabled={loading}
             onClick={
               isFavorite
-                ? () => removeMovieFromFavoritesAsync(item)
-                : () => addMovieToFavoritesAsync(item)
+                ? (e) => {
+                    e.stopPropagation();
+                    return removeMovieFromFavoritesAsync(item);
+                  }
+                : (e) => {
+                    e.stopPropagation();
+                    return addMovieToFavoritesAsync(item);
+                  }
             }
           >
             {isFavorite ? (

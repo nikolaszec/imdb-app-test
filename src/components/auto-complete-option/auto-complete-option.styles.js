@@ -11,8 +11,8 @@ const autoCompleteOptionStyles = makeStyles((theme) => ({
     borderRadius: "3px",
   },
   detailsWrapper: {
-    background: "black",
-    color: "white",
+    background: theme.palette.background.secondary,
+    color: theme.palette.primary.contrastText,
     opacity: ".82",
     position: "absolute",
     transition: "height .3s, visibility .1s",

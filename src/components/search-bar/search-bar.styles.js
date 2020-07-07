@@ -7,7 +7,7 @@ const searchBarStyles = makeStyles((theme) => ({
     alignItems: "flex-end",
   },
   autoComplete: {
-    color: "white",
+    color: theme.palette.primary.contrastText,
     padding: "0px",
     [theme.breakpoints.up("sm")]: {
       width: "500px",
@@ -26,7 +26,7 @@ const searchBarStyles = makeStyles((theme) => ({
     },
   },
   submitBtn: {
-    color: "white",
+    color: theme.palette.primary.contrastText,
     width: "25px",
     height: "100%",
     background: "transparent",

@@ -21,10 +21,15 @@ const ItemDetails = ({
   useEffect(() => {
     fetchMovieDetailsAsync(slug);
   }, [slug]);
+  const { poster_path, backdrop_path } = movieDetails;
   const stylesWithDynamicImage = itemDetailsStyles({
     imagePath: {
-      small: `https://image.tmdb.org/t/p/w300/${movieDetails.poster_path}`,
-      large: `https://image.tmdb.org/t/p/w1280/${movieDetails.backdrop_path}`,
+      small: poster_path
+        ? `https://image.tmdb.org/t/p/w300/${poster_path}`
+        : "",
+      large: backdrop_path
+        ? `https://image.tmdb.org/t/p/w1280/${backdrop_path}`
+        : "",
     },
   });
   const classes = stylesWithDynamicImage();
