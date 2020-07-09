@@ -10,6 +10,7 @@ import {
   selectMovies,
   selectIsFetching,
   selectIsFetchingMore,
+  selectTotalPages,
 } from "../../redux/movies/movies.selectors";
 
 const ItemsContainer = ({
@@ -18,6 +19,7 @@ const ItemsContainer = ({
   isFetchingInitial,
   movies,
   fetchMoviesAsync,
+  totalPages,
 }) => {
   const [page, setPage] = useState(1);
   const classes = itemsContainerStyles();
@@ -36,7 +38,7 @@ const ItemsContainer = ({
   }, [page]);
 
   return (
-    <div style={{ paddingTop: "3%" }}>
+    <div className={classes.container}>
       {isFetchingInitial ? (
         <CircularProgress />
       ) : (
@@ -51,7 +53,7 @@ const ItemsContainer = ({
               <div className={classes.actionsWrapper}>
                 {isFetchingMore ? (
                   <CircularProgress />
-                ) : movies.length > 19 ? (
+                ) : movies.length > 19 && totalPages !== page ? (
                   <Button
                     fullWidth
                     color="primary"
@@ -77,6 +79,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const mapStateToProps = createStructuredSelector({
+  totalPages: selectTotalPages,
   movies: selectMovies,
   isFetchingInitial: selectIsFetching,
   isFetchingMore: selectIsFetchingMore,

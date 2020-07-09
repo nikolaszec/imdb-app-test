@@ -12,6 +12,9 @@ const ItemPreview = ({ item, isAuth, show }) => {
   const classes = itemPreviewStyles();
   const router = useRouter();
   const { release_date, vote_count, vote_average, id } = item;
+  const releaseDateDisplay = !Number.isNaN(new Date(release_date).getFullYear())
+    ? new Date(release_date).getFullYear()
+    : "No data to display.";
   const handleSeeMore = (id) => {
     router.push("/movie/[slug]", `/movie/${id}`);
   };
@@ -34,7 +37,7 @@ const ItemPreview = ({ item, isAuth, show }) => {
           )}
         </Typography>
         <Typography variant="h6" color="textPrimary">
-          Year: {new Date(release_date).getFullYear()}
+          Year: {releaseDateDisplay}
         </Typography>
         {isAuth ? <FavoriteButton item={item} /> : null}
         <Button

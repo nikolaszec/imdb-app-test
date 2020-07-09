@@ -1,6 +1,9 @@
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 const itemDetailsStyles = ({ imagePath }) => {
   return makeStyles((theme) => ({
+    starIcon: {
+      color: "gold",
+    },
     title: {
       [theme.breakpoints.down("sm")]: {
         marginTop: "13%",

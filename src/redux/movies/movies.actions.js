@@ -8,6 +8,13 @@ export const fetchMoviesInitial = (results) => {
   };
 };
 
+export const setTotalPages = (totalPages) => {
+  return {
+    type: MoviesActionTypes.SET_TOTAL_PAGES,
+    payload: totalPages,
+  };
+};
+
 export const fetchMoreMovies = (results) => {
   return {
     type: MoviesActionTypes.FETCH_MORE_MOVIES,
@@ -56,6 +63,8 @@ export const fetchMoviesAsync = (page = 1, category) => {
       const response = await axios.get(apiRequest, config);
 
       if (response) {
+        console.log(response);
+        dispatch(setTotalPages(response.data.total_pages));
         if (page > 1) {
           dispatch(fetchMoreMovies(response.data.results));
         } else {

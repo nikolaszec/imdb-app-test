@@ -5,6 +5,7 @@ const INITIAL_STATE = {
   isFetching: false,
   isFetchingMore: false,
   error: "",
+  totalPages: 0,
 };
 
 const moviesReducer = (state = INITIAL_STATE, action) => {
@@ -54,6 +55,11 @@ const moviesReducer = (state = INITIAL_STATE, action) => {
         ...state,
         error: action.payload,
         isFetching: false,
+      };
+    case MoviesActionTypes.SET_TOTAL_PAGES:
+      return {
+        ...state,
+        totalPages: action.payload,
       };
     default:
       return state;
