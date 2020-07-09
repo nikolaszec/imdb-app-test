@@ -13,7 +13,7 @@ const Item = ({ item }) => {
   const [detailsView, setDetailsView] = useState(false);
   const { title, poster_path } = item;
   return (
-    <Grid item xs={12} sm={4} lg={2}>
+    <Grid item xs={12} sm={4} xl={2} lg={3}>
       <Grow in>
         <div
           onClick={() => setDetailsView(!detailsView)}
